@@ -104,6 +104,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-KBV"
+      RetentionInDays: 7
 
   KBVEventProcessorFunction:
     DependsOn:
@@ -249,6 +250,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-KBVAddress"
+      RetentionInDays: 7
 
   KBVAddressEventProcessorFunction:
     DependsOn:
@@ -394,6 +396,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-KBVFraud"
+      RetentionInDays: 7
 
   KBVFraudEventProcessorFunction:
     DependsOn:
@@ -539,6 +542,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-IPV"
+      RetentionInDays: 7
 
   IPVEventProcessorFunction:
     DependsOn:
@@ -685,6 +689,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-IPVPass"
+      RetentionInDays: 7
 
   IPVPassEventProcessorFunction:
     DependsOn:
@@ -831,6 +836,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       LogGroupName: "/aws/lambda/EventProcessorFunction-SPOT"
+      RetentionInDays: 7
 
   SPOTEventProcessorFunction:
     DependsOn:
