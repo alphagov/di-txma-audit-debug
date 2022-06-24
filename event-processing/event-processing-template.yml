@@ -34,6 +34,9 @@ Conditions:
       - Fn::Equals:
           - !Ref CodeSigningConfigArn
           - "none"
+  IsStagingOrIntegration: !Or
+    - !Equals [ !Ref Environment, integration ]
+    - !Equals [ !Ref Environment, staging ]
   IsProductionOrStaging: !And
     - !Not [!Equals [ !Ref Environment, dev]]
     - !Not [!Equals [ !Ref Environment, build]]
@@ -323,7 +326,7 @@ Resources:
     DependsOn:
       - KBVEventProcessorFunction
     Type: AWS::Lambda::EventSourceMapping
-    Condition: IsProductionOrStaging
+    Condition: IsStagingOrIntegration #Not Prod
     Properties:
       EventSourceArn: "{{resolve:ssm:KBVQueueARN}}"
       FunctionName: !Ref KBVEventProcessorFunction
@@ -332,7 +335,7 @@ Resources:
     DependsOn:
       - KBVLambdaAccessRole
     Type: AWS::IAM::Policy
-    Condition: IsProductionOrStaging
+    Condition: IsStagingOrIntegration #Not Prod
     Properties:
       Roles:
         - !Ref KBVLambdaAccessRole
