@@ -35,6 +35,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@slack/web-api": "^6.7.2",
     "aws-sdk": "^2.1136.0"
   }
 }
