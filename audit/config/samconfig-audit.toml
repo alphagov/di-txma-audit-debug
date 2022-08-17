@@ -17,7 +17,7 @@ parameter_overrides=[
 ]
 
 [dev.deploy.parameters]
-stack_name = "audit"
+stack_name = "audit-tobytesting-plat191"
 region = "eu-west-2"
 capabilities = "CAPABILITY_NAMED_IAM"
 tags = "project=\"di-txma-audit\" stage=\"develop\""
@@ -28,7 +28,7 @@ parameter_overrides=[
 ]
 
 [build.deploy.parameters]
-stack_name = "audit"
+stack_name = "audit-tobytesting-plat191"
 region = "eu-west-2"
 capabilities = "CAPABILITY_NAMED_IAM"
 tags = "project=\"di-txma-audit\" stage=\"build\""

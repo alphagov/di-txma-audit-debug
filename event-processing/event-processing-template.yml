@@ -1564,7 +1564,7 @@ Resources:
     Type: AWS::Logs::LogGroup
     Properties:
       KmsKeyId: !GetAtt LogsKmsKey.Arn
-      LogGroupName: "/aws/firehose"
+      LogGroupName: "/aws/firehose-toby-testing-plat191"
       RetentionInDays: 7
 
   FraudFirehoseLogStream:

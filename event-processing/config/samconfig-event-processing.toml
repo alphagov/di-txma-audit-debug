@@ -17,18 +17,19 @@ parameter_overrides=[
 ]
 
 [dev.deploy.parameters]
-stack_name = "event-processing"
+stack_name = "event-processing-tobytesting-plat191"
 region = "eu-west-2"
 tags = "project=\"di-txma-event_processor\" stage=\"develop\""
 capabilities = "CAPABILITY_NAMED_IAM"
 parameter_overrides=[
     "Environment=dev",
     "CodeSigningConfigArn=none",
-    "PermissionsBoundary=none"
+    "PermissionsBoundary=none",
+#    "TestRoleArn:"
 ]
 
 [build.deploy.parameters]
-stack_name = "event-processing"
+stack_name = "event-processing-tobytesting-plat191"
 region = "eu-west-2"
 tags = "project=\"di-txma-event_processor\" stage=\"build\""
 capabilities = "CAPABILITY_NAMED_IAM"
