@@ -25,7 +25,6 @@ parameter_overrides=[
     "Environment=dev",
     "CodeSigningConfigArn=none",
     "PermissionsBoundary=none",
-#    "TestRoleArn:"
 ]
 
 [build.deploy.parameters]
