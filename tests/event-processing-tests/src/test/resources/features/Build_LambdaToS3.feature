@@ -34,7 +34,6 @@ Feature: Raw event data journey from the lambda to S3 for build (and dev) enviro
       | IPVPass     |
       | KBV         |
       | KBVAddress  |
-      | KBVFraud    |
       | SPOT        |
 
   Scenario Outline: Check messages don't pass through lambda if missing timestamp
