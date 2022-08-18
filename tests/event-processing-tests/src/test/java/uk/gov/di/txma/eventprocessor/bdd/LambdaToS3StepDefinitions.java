@@ -5,8 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.datatable.DataTable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import software.amazon.awssdk.core.SdkBytes;
@@ -246,7 +244,7 @@ public class LambdaToS3StepDefinitions {
      * @param endpoint  What S3 bucket to look at
      */
     private void findLatestKeysFromEventProcessingS3(String endpoint){
-        String bucketName = "event-processing-"+System.getenv("TEST_ENVIRONMENT")+"-"+endpoint+"-splunk-test";
+        String bucketName = "di-txma-audit-debug-"+System.getenv("TEST_ENVIRONMENT")+"-"+endpoint+"-splunk-test";
 
         // The list of the latest two keys
         List<String> keys = new ArrayList<>();
