@@ -6,10 +6,10 @@
   "event_name": "IPV_FRAUD_CRI_START",
   "component_id": "https://review-f.integration.account.gov.uk",
   "user": {
-    "transaction_id": "34055c0e53c26f892c187b128c3d8508e85d0ee927bad3fb4945d27b06dc7027",
+    "transaction_id": "3b559bc879df6c0581f43df9bb34b74441b6e79b3d92a4aa69b0c203ccddba50",
     "user_id": "urn:fdc:gov.uk:2022:a19e9f6f-e9b1-4078-8fa4-f31a49c458ff",
-    "email": "1c87ec8fe1e1de279f84e4eb58d7df393f021e28e1a9a7ed7c88683a2b11eca6",
-    "phone": "e951087cc247da7a047cab7011393972a08e732c28c3af48684c8fbadf492bb2",
+    "email": "3c2f84fab25565c6d980da1326d5299f064dad98370e9be8eecbbed0a8b69abd",
+    "phone": "5715d61310e64882c41d088478a5f540c92f7d3f0806728218fb406257a63c14",
     "ip_address": "181.246.129.108",
     "session_id": "ca554782-8189-4a13-93da-9009244e06e9",
     "persistent_session_id": "...",
@@ -19,7 +19,7 @@
     "xray_trace_id": "24727sda4192"
   },
   "restricted": {
-    "experian_ref": "7a4639b0bcd4dbc6f8b565b8adfa0c6df391cc107bba62e0a5e13c207dc6fe0f"
+    "experian_ref": "b5a4b2d77485e412162153b749565da70b902312c0a90a41e87d538543962156"
   },
   "extensions": {
     "response": "Authentification successful"
