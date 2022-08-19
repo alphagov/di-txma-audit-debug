@@ -16,7 +16,7 @@ public class Cleanup {
 
     public static void emptyBucket(String endpoint){
         Region region = Region.EU_WEST_2;
-        String bucketName = "di-txma-audit-debug-"+endpoint+"-splunk-test";
+        String bucketName = "di-txma-audit-debug-"+System.getenv("TEST_ENVIRONMENT")+"-"+endpoint+"-splunk-test";
 
         try (S3Client s3 = S3Client.builder()
                 .region(region)
