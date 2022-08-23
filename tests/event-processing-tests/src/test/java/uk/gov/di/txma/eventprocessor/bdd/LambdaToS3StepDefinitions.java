@@ -261,7 +261,7 @@ public class LambdaToS3StepDefinitions {
             ListObjectsV2Request listObjects = ListObjectsV2Request
                     .builder()
                     .bucket(bucketName)
-                    .prefix("firehosefail/"+currentDateTime.getYear()+"/")
+                    .prefix("firehose/"+currentDateTime.getYear()+"/")
                     .build();
             ListObjectsV2Response s3Objects = s3.listObjectsV2(listObjects);
             List<S3Object> listOfS3Objects = s3Objects.contents();
@@ -283,7 +283,7 @@ public class LambdaToS3StepDefinitions {
                 listObjects = ListObjectsV2Request
                         .builder()
                         .bucket(bucketName)
-                        .prefix("firehosefail/"+currentDateTime.getYear()+"/")
+                        .prefix("firehose/"+currentDateTime.getYear()+"/")
                         .continuationToken(s3Objects.nextContinuationToken())
                         .build();
 
@@ -331,6 +331,9 @@ public class LambdaToS3StepDefinitions {
             System.exit(1);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (SdkClientException e){
+            // Do nothing - we are in a loop and tried to get the thing too soon
+            System.err.println(e.awsErrorDetails().getMessage());
         }
     }
 
