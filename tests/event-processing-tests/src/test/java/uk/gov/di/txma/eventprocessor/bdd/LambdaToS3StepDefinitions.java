@@ -260,7 +260,7 @@ public class LambdaToS3StepDefinitions {
             // Lists 1000 objects
             ListObjectsV2Request listObjects = ListObjectsV2Request
                     .builder()
-                    .bucket(bucketName)
+                    .bucket(bucketName+"nonexisting")
                     .prefix("firehose/"+currentDateTime.getYear()+"/")
                     .build();
             ListObjectsV2Response s3Objects = s3.listObjectsV2(listObjects);
@@ -282,7 +282,7 @@ public class LambdaToS3StepDefinitions {
                 // Gets the next batch
                 listObjects = ListObjectsV2Request
                         .builder()
-                        .bucket(bucketName)
+                        .bucket(bucketName+"nonexisting")
                         .prefix("firehose/"+currentDateTime.getYear()+"/")
                         .continuationToken(s3Objects.nextContinuationToken())
                         .build();
@@ -310,7 +310,7 @@ public class LambdaToS3StepDefinitions {
                 GetObjectRequest objectRequest = GetObjectRequest
                         .builder()
                         .key(key)
-                        .bucket(bucketName)
+                        .bucket(bucketName+"nonexisting")
                         .build();
 
                 // Reads the new object
