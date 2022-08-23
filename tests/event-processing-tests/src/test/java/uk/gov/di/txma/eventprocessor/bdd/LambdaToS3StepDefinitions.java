@@ -261,7 +261,7 @@ public class LambdaToS3StepDefinitions {
             ListObjectsV2Request listObjects = ListObjectsV2Request
                     .builder()
                     .bucket(bucketName)
-                    .prefix("firehose/"+currentDateTime.getYear()+"/")
+                    .prefix("firehosefail/"+currentDateTime.getYear()+"/")
                     .build();
             ListObjectsV2Response s3Objects = s3.listObjectsV2(listObjects);
             List<S3Object> listOfS3Objects = s3Objects.contents();
@@ -283,7 +283,7 @@ public class LambdaToS3StepDefinitions {
                 listObjects = ListObjectsV2Request
                         .builder()
                         .bucket(bucketName)
-                        .prefix("firehose/"+currentDateTime.getYear()+"/")
+                        .prefix("firehosefail/"+currentDateTime.getYear()+"/")
                         .continuationToken(s3Objects.nextContinuationToken())
                         .build();
 
