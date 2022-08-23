@@ -323,7 +323,11 @@ public class LambdaToS3StepDefinitions {
             output = str.toString();
 
         } catch (S3Exception e) {
+
+            System.err.println(e.awsErrorDetails().errorCode());
             System.err.println(e.awsErrorDetails().errorMessage());
+            System.err.println(e.awsErrorDetails().sdkHttpResponse());
+            System.err.println(e.awsErrorDetails().serviceName());
             System.exit(1);
         } catch (IOException e) {
             throw new RuntimeException(e);
